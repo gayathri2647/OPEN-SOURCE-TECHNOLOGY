@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Iteration statements</title>
+  </head>
+  <body>
+    <h1>Iteration statements</h1>
+    <script>
+      //for loop
+      document.write('<br><br>for loop statement:<br>');
+      for (let i = 2; i <= 5; i++) {
+        document.write(i);
+      }
+
+      // while loop
+      document.write('<br><br>while loop:<br>');
+      let i = 10;
+      while (i >= 5) {
+        document.write(i);
+        i--;
+      }
+
+      //do while loop
+      document.write('<br><br>do while loop:<br>');
+      let n = 1;
+      do {
+        document.write(i);
+        i++;
+      } while (i <= 5);
+
+      //for in loop
+      document.write('<br><br>for in loop:<br>');
+      let phone = { name: 'Xiaomi', model: 17, color: 'Purple' };
+      for (let key in phone) {
+        document.write(key + ':' + phone[key]);
+      }
+
+      //for of loop
+      document.write('<br><br>for of loop:<br>');
+      let vegetable = ['cabbage', 'capsicum', 'bittergaurd'];
+      for (let item of vegetable) {
+        document.write(item);
+      }
+    </script>
+  </body>
+</html>

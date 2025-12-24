@@ -1,0 +1,64 @@
+<html>
+<head>
+  <title>JavaScript Function Concepts</title>
+</head>
+<body>
+
+<h2>JavaScript Function Concepts</h2>
+
+<script>
+  // 1. Without Argument, Without Return
+  function sayHello() {
+    document.write("1. Hello Student<br>");
+  }
+  sayHello();
+
+  document.write("<br>");
+
+  // 2. Without Argument, With Return
+  function getMessage() {
+    return "2. Welcome to JavaScript<br>";
+  }
+  document.write(getMessage());
+
+  document.write("<br>");
+
+  // 3. With Argument, Without Return
+  function greet(name) {
+    document.write("3. Hello " + name + "<br>");
+  }
+  greet("Alice");
+
+  document.write("<br>");
+
+  // 4. With Argument, With Return
+  function add(a, b) {
+    return a + b;
+  }
+  document.write("4. Sum is: " + add(5, 3) + "<br>");
+
+  document.write("<br>");
+
+  // 5. Arrow Function
+  let multiply = (x, y) => x * y;
+  document.write("5. Multiplication: " + multiply(4, 2) + "<br>");
+
+  document.write("<br>");
+
+  // 6. Immediately Invoked Function (IIFE)
+  (function () {
+    document.write("6. This is Immediate Invoked Function<br>");
+  })();
+
+  document.write("<br>");
+
+  // 7. Anonymous Function
+  let show = function () {
+    document.write("7. This is Anonymous Function<br>");
+  };
+  show();
+
+</script>
+
+</body>
+</html>

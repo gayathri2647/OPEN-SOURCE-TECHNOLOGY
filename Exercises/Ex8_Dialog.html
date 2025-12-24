@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>JavaScript Dialog Box</title>
+</head>
+<body>
+    <h2>Dialog Box</h2>
+    <button onclick="alertBox()">Alert Box</button>
+    <br><br>
+    <!-- Confirm Dialog Box-->
+    <button onclick="confirmBox()">Confirm Box</button>
+    <br><br>
+   <!--Prompt Dialog Box--> 
+    <button onclick="promptBox()">Prompt Box</button>
+    <br><br>
+    <script>
+        // Alert Dialog Box
+        function alertBox() {
+            alert("This is an Alert Message");
+        }
+        // Confirm Dialog Box
+        function confirmBox() {
+            let choice = confirm("Do you want to continue?");
+
+            if (choice == true) {
+                alert("You pressed OK");
+            } else {
+                alert("You pressed Cancel");
+            }
+        }
+        // Prompt Dialog Box
+        function promptBox() {
+            let name = prompt("Enter your name:");
+
+            if (name == null) {
+                alert("You cancelled the input");
+            } else {
+                alert("Hello " + name);
+            }
+        }
+    </script>
+</body>
+</html>
