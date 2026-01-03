@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Event Handling</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 2000px; /* Needed for scroll event */
+        }
+
+        #box {
+            width: 300px;
+            height: 150px;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 150px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 8px;
+        }
+
+        #output {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body
+    onload="pageLoad()"
+    onresize="windowResize()"
+    onscroll="pageScroll()"
+    onbeforeunload="beforeUnload()"
+    onunload="pageUnload()">
+
+    <h2 
+        onmouseover="mouseOver()" 
+        onmouseout="mouseOut()">
+        EVENT HANDLING  
+    </h2>
+
+    <!-- Mouse Events -->
+    <div id="box"
+         onclick="mouseClick()"
+         ondblclick="mouseDoubleClick()"
+         onmousedown="mouseDown()"
+         onmouseup="mouseUp()"
+         onmousemove="mouseMove()"
+         oncontextmenu="rightClick(event)">
+        Mouse Events
+    </div>
+
+    <!-- Keyboard Events -->
+    <h3>Keyboard Events</h3>
+    <input type="text"
+           placeholder="Type here"
+           onkeydown="keyDown()"
+           onkeyup="keyUp()"
+           onkeypress="keyPress()">
+
+    <!-- Output -->
+    <p id="output">Event message will appear here</p>
+
+    <script>
+        /*  MOUSE EVENTS  */
+
+        function mouseClick() {
+            showMessage("Mouse click event occurred");
+        }
+
+        function mouseDoubleClick() {
+            showMessage("Mouse double click event occurred");
+        }
+
+        function mouseDown() {
+            showMessage("Mouse button pressed (mousedown)");
+        }
+
+        function mouseUp() {
+            showMessage("Mouse button released (mouseup)");
+        }
+
+        function mouseOver() {
+            showMessage("Mouse entered the text (mouseover)");
+        }
+
+        function mouseOut() {
+            showMessage("Mouse left the text (mouseout)");
+        }
+
+        function mouseMove() {
+            showMessage("Mouse moving inside the box");
+        }
+
+        function rightClick(event) {
+            event.preventDefault();
+            showMessage("Right click (contextmenu) event");
+        }
+
+        /*  KEYBOARD EVENTS  */
+
+        function keyDown() {
+            showMessage("Key pressed down (keydown)");
+        }
+
+        function keyUp() {
+            showMessage("Key released (keyup)");
+        }
+
+        function keyPress() {
+            showMessage("Key pressed (keypress)");
+        }
+
+        /*  LOAD EVENTS */
+
+        function pageLoad() {
+            showMessage("Page fully loaded (load)");
+        }
+
+        function windowResize() {
+            showMessage("Window resized");
+        }
+
+        function pageScroll() {
+            showMessage("Page scrolled");
+        }
+
+        function beforeUnload() {
+            return "Are you sure you want to leave?";
+        }
+
+        function pageUnload() {
+            showMessage("Page unloaded");
+        }
+
+        /* ========== COMMON FUNCTION ========== */
+
+        function showMessage(message) {
+            document.getElementById("output").innerHTML = message;
+        }
+    </script>
+
+</body>
+</html>
