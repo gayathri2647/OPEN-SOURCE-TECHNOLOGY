@@ -4,12 +4,13 @@
 </head>
 <body>
     <h2>Dialog Box</h2>
+    <!-- Alert Dialog Box-->
     <button onclick="alertBox()">Alert Box</button>
     <br><br>
     <!-- Confirm Dialog Box-->
     <button onclick="confirmBox()">Confirm Box</button>
     <br><br>
-   <!--Prompt Dialog Box--> 
+    <!-- Prompt Dialog Box--> 
     <button onclick="promptBox()">Prompt Box</button>
     <br><br>
     <script>
@@ -19,23 +20,12 @@
         }
         // Confirm Dialog Box
         function confirmBox() {
-            let choice = confirm("Do you want to continue?");
-
-            if (choice == true) {
-                alert("You pressed OK");
-            } else {
-                alert("You pressed Cancel");
-            }
+             confirm("Do you want to continue?");
         }
         // Prompt Dialog Box
         function promptBox() {
             let name = prompt("Enter your name:");
-
-            if (name == null) {
-                alert("You cancelled the input");
-            } else {
-                alert("Hello " + name);
-            }
+            alert("Hello " + name);
         }
     </script>
 </body>
