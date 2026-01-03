@@ -1,5 +1,4 @@
-<?php
-echo "
+
 <html>
 <body>
 
@@ -8,11 +7,11 @@ echo "
     <h3>Arithmetic Operators</h3>
     <p id='arithmetic'></p>
 
-    <h3>Assignment Operators</h3>
-    <p id='assignment'></p>
-
     <h3>Comparison Operators</h3>
     <p id='comparison'></p>
+
+    <h3>Assignment Operators</h3>
+    <p id='assignment'></p>
 
     <script>
         // ARITHMETIC OPERATORS
@@ -31,6 +30,22 @@ echo "
             'Division: ' + div + '<br>' +
             'Modulus: ' + mod;
 
+        // COMPARISON OPERATORS
+        let c = 20;
+        let d = 15;
+
+        document.getElementById('comparison').innerHTML =
+            'c > d : ' + (c > d) + '<br>' +
+            'c < d : ' + (c < d) + '<br>' +
+            'c == d : ' + (c == d) + '<br>' +
+            'c === d : ' + (c === d) + '<br>' +
+            'c != d : ' + (c != d) + '<br>' +
+            'c >= d : ' + (c >= d) + '<br>' +
+            'c <= d : ' + (c <= d);
+
+        // ALERT 
+        alert('All calculations completed successfully!');
+
         // ASSIGNMENT OPERATORS
         let x = 10;
         x += 5;
@@ -40,21 +55,27 @@ echo "
 
         document.write('<p><b>Assignment (document.write): ' + x + '</b></p>');
 
-        // COMPARISON OPERATORS
-        let c = 20;
-        let d = 15;
+        // ASSIGNMENT OPERATORS (another example)
 
-        document.getElementById('comparison').innerHTML =
-            'c > d : ' + (c > d) + '<br>' +
-            'c < d : ' + (c < d) + '<br>' +
-            'c == d : ' + (c == d) + '<br>' +
-            'c != d : ' + (c != d) + '<br>' +
-            'c >= d : ' + (c >= d) + '<br>' +
-            'c <= d : ' + (c <= d);
+        // let x;
 
-        // ALERT 
-        alert('All calculations completed successfully!');
+        x = 10;
+        x += 5;
+        document.write('<p><b>x = 10 → x += 5 → ' + x + '</b></p>');
+
+        x = 10;
+        x -= 2;
+        document.write('<p><b>x = 10 → x -= 2 → ' + x + '</b></p>');
+
+        x = 10;
+        x *= 3;
+        document.write('<p><b>x = 10 → x *= 3 → ' + x + '</b></p>');
+
+        x = 10;
+        x /= 2;
+        document.write('<p><b>x = 10 → x /= 2 → ' + x + '</b></p>');
+
+
     </script>
 </body>
-</html>";
-?>
+</html>
