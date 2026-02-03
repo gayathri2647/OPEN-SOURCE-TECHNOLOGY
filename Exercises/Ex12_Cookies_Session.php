@@ -6,7 +6,7 @@
 
 <h2>Cookie & Session</h2>
 
-<form method="post" action="process.php">
+<form method="post" action="Ex12.php">
     <input type="text" name="username" placeholder="Enter name">
     <br><br>
     <button name="save">Save</button>
