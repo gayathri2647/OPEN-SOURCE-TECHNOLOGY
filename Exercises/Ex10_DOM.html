@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM</title>
+  <style>
+    .note {
+      padding: 8px;
+      border: 1px solid #999;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 id="title">Welcome</h2>
+
+  <div class="note">This is an important note</div>
+
+  <ul>
+    <li>Open Source Technology</li>
+    <li>PHP and JAVASCRIPT</li>
+  </ul>
+
+  <button onclick="updateContent()">Update Content</button>
+
+  <script>
+    // By ID
+    document.getElementById("title").style.color = "purple";
+
+    // By Class
+    document.getElementsByClassName("note")[0].style.backgroundColor = "lightgray";
+
+    // By Tag Name
+    document.getElementsByTagName("li")[1].style.fontWeight = "bold";
+
+    // Modern Selector
+    document.querySelector("ul li").style.color = "blue";
+
+    // DOM Event
+    function updateContent() {
+      const title = document.getElementById("title");
+      title.innerText = "Content Updated!";
+      title.style.color = "green";
+    }
+  </script>
+
+</body>
+</html>
