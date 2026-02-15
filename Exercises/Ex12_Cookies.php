@@ -1,8 +1,12 @@
 <?php
 // Create a Cookie (Valid for 1 hour)
-setcookie("username", "gayu", time() + 3600, "/");
+setcookie("username", "Gayu", time() + 3600, "/");
 //Read Cookie
-$_COOKIE["username"]
-// Delete Cookie (Uncomment below line if needed)
+if(isset($_COOKIE["username"])) {
+    echo "Cookie Value: " . $_COOKIE["username"];
+} else {
+    echo "Cookie not set. Please refresh page.";
+}
+// Delete Cookie 
 //setcookie("username", "", time() - 3600, "/");
 ?>
