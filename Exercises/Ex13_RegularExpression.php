@@ -1,6 +1,6 @@
 <?php
 // REGEX 
-echo "<h2>Basic Regex Ex</h2>";
+echo "<h2>Basic Regex</h2>";
 
 //preg_match()
 $text = "Nothing is Forever";
