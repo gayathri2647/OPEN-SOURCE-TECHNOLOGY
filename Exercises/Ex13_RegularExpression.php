@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $passwordErr = "Password must be minimum 6 characters";
     }
     if($nameErr=="" && $emailErr=="" && $mobileErr=="" && $passwordErr==""){
-        echo "<h3 style='color:green'>Registration Successful ✅</h3>";
+        echo "<h3 style='color:green'>Registration Successful</h3>";
     }
 }
 ?>
