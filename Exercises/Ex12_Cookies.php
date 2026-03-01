@@ -1,6 +1,6 @@
 <?php
 // Create a Cookie (Valid for 1 hour)
-setcookie("username", "Gayu", time() + 3600, "/");
+setcookie("username", "DSA STUDENTS", time() + 3600, "/");
 //Read Cookie
 if(isset($_COOKIE["username"])) {
     echo "Cookie Value: " . $_COOKIE["username"];
