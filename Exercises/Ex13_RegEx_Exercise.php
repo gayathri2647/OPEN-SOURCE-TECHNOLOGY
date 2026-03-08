@@ -1,52 +1,72 @@
+<h2>Registration Form</h2>
+
+<form method="post"action="">
+
+Name: <input type="text" name="name"><br>
+
+Age: <input type="text" name="age"><br>
+
+Email: <input type="text" name="email"><br>
+
+Mobile: <input type="text" name="mobile"><br>
+
+Password: <input type="password" name="password"><br>
+
+<input type="submit" name="submit" value="Register">
+
+</form>
+
+
 <?php
-error_reporting(0);
 
-$nameErr = $emailErr = $mobileErr = $passwordErr = "";
-$name = $email = $mobile = $password = "";
+$nameErr = $ageErr = $emailErr = $mobileErr = $passwordErr = "";
 
-if(isset($_POST['submit'])) {
+if(isset($_POST['submit']))
+{
+    $name = $_POST['name'];
+    $age = $_POST['age'];
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile'];
+    $password = $_POST['password'];
 
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $mobile = $_POST["mobile"];
-    $password = $_POST["password"];
-    
-    // Name (Only letters)
-    if(!preg_match("/^[A-Za-z]+$/", $name)){
-        $nameErr = "Only letters allowed";
+    // Name validation
+    if(!preg_match("/^[A-Za-z]+$/",$name))
+    {
+        $nameErr = "Name must contain only letters";
     }
 
-    // Email
-    if(!preg_match("/^\w+@\w+\.\w+$/", $email)){
+    // Age validation
+    if(!preg_match("/^[0-9]{1,3}$/",$age))
+    {
+        $ageErr = "Invalid Age";
+    }
+
+    // Email validation
+    if(!preg_match("/^\w+@\w+\.\w+$/",$email))
+    {
         $emailErr = "Invalid Email";
     }
 
-    // Indian Mobile
-    if(!preg_match("/^[6-9]\d{9}$/", $mobile)){
+    // Mobile validation
+    if(!preg_match("/^[6-9][0-9]{9}$/",$mobile))
+    {
         $mobileErr = "Invalid Mobile Number";
     }
 
-    // Password
-    if(!preg_match("/^.{6,}$/", $password)){
+    // Password validation
+    if(strlen($password) < 6)
+    {
         $passwordErr = "Password must be minimum 6 characters";
     }
 
-    if($nameErr=="" && $emailErr=="" && $mobileErr=="" && $passwordErr==""){
-        echo "<h3 style='color:green'>Registration Successful</h3>";
+    if($nameErr=="" && $ageErr=="" && $emailErr=="" && $mobileErr=="" && $passwordErr=="")
+    {
+        echo "<h3>Registration Failed</h3>";
+    }
+    else
+    {
+        echo "<h3>Registration Successful</h3>";
     }
 }
+
 ?>
-
-<h2>Registration Form</h2>
-
-<form method="post" action="">
-    Name: <input type="text" name="name"> 
-    <span style="color:red"><?php echo $nameErr; ?></span><br><br>
-    Email: <input type="text" name="email"> 
-    <span style="color:red"><?php echo $emailErr; ?></span><br><br>
-    Mobile: <input type="text" name="mobile"> 
-    <span style="color:red"><?php echo $mobileErr; ?></span><br><br>
-    Password: <input type="password" name="password"> 
-    <span style="color:red"><?php echo $passwordErr; ?></span><br><br>
-    <input type="submit" name="submit" value="Register">
-</form>
