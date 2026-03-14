@@ -64,8 +64,9 @@ if (mysqli_query($conn, $sql)) {
 
 /* SELECT DATA */
 $result = mysqli_query($conn, "SELECT * FROM students");
-while ($row = mysqli_fetch_assoc($result)) {
-    echo "ID: " . $row["id"] . " - Name: " . $row["name"] . " - Class: " . $row["class"] . " - Age: " . $row["age"] . "<br>";
+while ($row = mysqli_fetch_array($result)) {
+    echo "ID: " . $row["id"] . " - Name: " . $row["name"] .
+     " - Class: " . $row["class"] . " - Age: " . $row["age"] . "<br>";
 }
 mysqli_close($conn);
 ?>

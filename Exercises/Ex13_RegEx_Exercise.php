@@ -25,10 +25,11 @@ if(isset($_POST['submit']))
     $email = $_POST['email'];
     $mobile = $_POST['mobile'];
     $password = $_POST['password'];
-            // Name validation
+            
     if($name && $age && $email && $mobile && $password!="")
     {
-         if(!preg_match("/^[A-Za-z\. ]*$/",$name))
+        // Name validation
+        if(!preg_match("/^[A-Za-z\. ]*$/",$name))
         {
           echo "<script>alert('Name must contain only letters');</script>";
          }
@@ -61,9 +62,9 @@ if(isset($_POST['submit']))
     }
 
     else
-        {
-            echo "<script>alert('Please fill in all fields');</script>";    
-        }
+    {
+        echo "<script>alert('Please fill in all fields');</script>";    
+    }
             
             
 }
