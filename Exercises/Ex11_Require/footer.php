@@ -1,11 +1,8 @@
-<?php
-echo "
+
 <hr>
 <footer>
-    <p>© " . date('Y') . " SLCS College</p>
+    <p>© 2026 SLCS College</p>
 </footer>
 
 </body>
 </html>
-";
-?>

@@ -14,7 +14,7 @@ echo "Server Connected Successfully <br>";
 
 /* CREATE TABLE */
 $sql = "CREATE TABLE students (
-id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+id INT(6) AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(50) NOT NULL,
 class VARCHAR(10),
 age INT(3)
@@ -61,5 +61,11 @@ if (mysqli_query($conn, $sql)) {
     echo "Error deleting record: " . mysqli_error($conn) . "<br>";
 }
 
+
+/* SELECT DATA */
+$result = mysqli_query($conn, "SELECT * FROM students");
+while ($row = mysqli_fetch_assoc($result)) {
+    echo "ID: " . $row["id"] . " - Name: " . $row["name"] . " - Class: " . $row["class"] . " - Age: " . $row["age"] . "<br>";
+}
 mysqli_close($conn);
 ?>
