@@ -26,47 +26,55 @@ if(isset($_POST['submit']))
     $mobile = $_POST['mobile'];
     $password = $_POST['password'];
             
+  
     if($name && $age && $email && $mobile && $password!="")
     {
+        $valid = true;
+
         // Name validation
         if(!preg_match("/^[A-Za-z\. ]*$/",$name))
         {
-          echo "<script>alert('Name must contain only letters');</script>";
-         }
+            echo "<script>alert('Name must contain only letters');</script>";
+            $valid = false;
+        }
 
         // Age validation
         if(!preg_match("/^[0-9]{1,3}$/",$age))
-         {
-              echo "<script>alert('Invalid Age');</script>";
+        {
+            echo "<script>alert('Invalid Age');</script>";
+            $valid = false;
         }
 
         // Email validation
         if(!preg_match("/^\w+@\w+\.\w+$/",$email))
         {
             echo "<script>alert('Invalid Email');</script>";
-         }
+            $valid = false;
+        }
 
         // Mobile validation
         if(!preg_match("/^[6-9][0-9]{9}$/",$mobile))
         {
             echo "<script>alert('Invalid Mobile Number');</script>";
+            $valid = false;
         }
 
         // Password validation
         if(strlen($password) < 6)
         {
             echo "<script>alert('Password must be minimum 6 characters');</script>";
+            $valid = false;
         }
-        
-   
-    }
 
-    else
+        // Success message
+        if($valid)
+        {
+            echo "<script>alert('Registration Successful');</script>";
+        }
+  }
+  else
     {
-        echo "<script>alert('Please fill in all fields');</script>";    
+        echo "<script>alert('Please fill in all fields');</script>";
     }
-            
-            
 }
-
 ?>
