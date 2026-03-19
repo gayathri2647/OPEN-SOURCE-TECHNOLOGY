@@ -29,11 +29,11 @@ if (mysqli_query($conn, $sql)) {
 
 /* INSERT DATA */
 $sql = "INSERT INTO students (name, class, age) VALUES
-('Gayathri','10A',18),
-('Preetha','10A',19),
-('Dhanishka','10A',18),
-('Arthi','10B',15),
-('Gopisree','10B',18)";
+('Alice','10A',18),
+('Bob','10A',19),
+('Charlie','10A',18),
+('David','10B',15),
+('Eve','10B',18)";
 
 if (mysqli_query($conn, $sql)) {
     echo "New record inserted successfully <br>";
@@ -43,7 +43,7 @@ if (mysqli_query($conn, $sql)) {
 
 
 /* UPDATE DATA */
-$sql = "UPDATE students SET age=19 WHERE name='Arthi'";
+$sql = "UPDATE students SET age=19 WHERE name='Alice'";
 
 if (mysqli_query($conn, $sql)) {
     echo "Record updated successfully <br>";
@@ -53,7 +53,7 @@ if (mysqli_query($conn, $sql)) {
 
 
 /* DELETE DATA */
-$sql = "DELETE FROM students WHERE name='Dhanishka'";
+$sql = "DELETE FROM students WHERE name='Alice'";
 
 if (mysqli_query($conn, $sql)) {
     echo "Record deleted successfully <br>";
