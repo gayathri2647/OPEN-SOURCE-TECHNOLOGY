@@ -47,9 +47,7 @@ document.write("<br>");
 
     document.write("Has apple? " + fruits.includes("apple") + "<br>");
     document.write("Index of banana: " + fruits.indexOf("banana") + "<br>");
-
-    let foundFruit = fruits.find(fruit => fruit.startsWith("o"));
-    document.write("Fruit starting with 'o': " + foundFruit + "<br><br>");
+    document.write("Starts with o: " + fruits.find(fruit => fruit[0] == "o") + "<br>");
 
     // 5. Adding and Removing Items
 
